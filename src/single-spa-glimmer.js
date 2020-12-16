@@ -39,9 +39,8 @@ function mount(opts) {
     .resolve()
   .then(() => {
     console.log('mount');
-    opts.renderComponent(App, {
-      element
-    });
+    const { renderComponent, App, element } = opts;
+    renderComponent(App, element);
     });
 }
 

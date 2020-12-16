@@ -1,5 +1,5 @@
 module.exports = {
-  mode: 'development',
+  mode: process.NODE_ENV === 'production' ? 'production' : 'development',
   entry: './src/index.js',
   output: {
     library: 'navbar',
@@ -14,9 +14,9 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             plugins:[ 
-            '@glimmer/babel-plugin-strict-template-precompile',
-            ['@babel/plugin-proposal-decorators', { legacy: true }],
-            '@babel/plugin-proposal-class-properties',
+              '@glimmer/babel-plugin-strict-template-precompile',
+              ['@babel/plugin-proposal-decorators', { legacy: true }],
+              '@babel/plugin-proposal-class-properties',
             ],
             presets: ['@babel/preset-env'],
           },
@@ -26,7 +26,7 @@ module.exports = {
   },
   devServer: {
     headers: {
-    "Access-Control-Allow-Origin": "*",
-  }
+      "Access-Control-Allow-Origin": "*",
+    }
   }
 };

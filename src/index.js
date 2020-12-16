@@ -1,5 +1,5 @@
 import { renderComponent } from '@glimmer/core';
-import App from './MyComponent.js';
+import MyComponent from './MyComponent.js';
 import LocaleService from './services/LocaleService.js';
 import singleSpaGlimmer from './single-spa-glimmer.js';
 
@@ -23,7 +23,7 @@ document.addEventListener(
 
 const element = document.getElementById('single-spa-application:@dcx/navbar');
 const glimmerLifecycles = singleSpaGlimmer({
-  App,
+  App: MyComponent,
   renderComponent,
   element,
 });
