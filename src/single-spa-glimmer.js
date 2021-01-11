@@ -31,6 +31,7 @@ export default function singleSpaGlimmer(userOpts) {
 }
 
 function bootstrap(opts) {
+  console.log('bootstrap');
   return Promise.resolve();
 }
 
@@ -45,6 +46,7 @@ function mount(opts) {
 }
 
 function unmount(opts) {
+  console.log('unmount');
   return Promise
     .resolve()
     .then(() => {
