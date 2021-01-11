@@ -1,11 +1,10 @@
 const defaultOpts = {
   renderComponent: null,
   App: null,
-  element: null, 
+  root: null, 
 }
 
 export default function singleSpaGlimmer(userOpts) {
-  console.log('inside single spa glimmer');
   if (typeof userOpts !== 'object') {
     throw new Error(`single-spa-glimmer requires a configuration object`);
   }
@@ -31,7 +30,6 @@ export default function singleSpaGlimmer(userOpts) {
 }
 
 function bootstrap(opts) {
-  console.log('bootstrap');
   return Promise.resolve();
 }
 
@@ -39,14 +37,14 @@ function mount(opts) {
   return Promise
     .resolve()
   .then(() => {
-    console.log('mount');
-    const { renderComponent, App, element } = opts;
+    globalThis[Symbol.for('GLIMMER_VALIDATOR_REGISTRATION')] = false;
+    const { renderComponent, App, root } = opts;
+    const element = document.getElementById(root);
     renderComponent(App, element);
     });
 }
 
 function unmount(opts) {
-  console.log('unmount');
   return Promise
     .resolve()
     .then(() => {

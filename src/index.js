@@ -3,11 +3,11 @@ import App from './App.js';
 import LocaleService from './services/LocaleService.js';
 import singleSpaGlimmer from './single-spa-glimmer.js';
 
-const element = document.getElementById('people');
+const root = 'single-spa-application:@glimmer-mf/people';
 const glimmerLifecycles = singleSpaGlimmer({
   App,
   renderComponent,
-  element,
+  root,
 });
 
 export const bootstrap = glimmerLifecycles.bootstrap;

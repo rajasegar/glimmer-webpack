@@ -1,14 +1,15 @@
 {
-  "name": "@dcx/navbar",
+  "name": "@glimmer-mf/people",
   "scripts": {
     "start": "webpack serve",
-    "build": "NODE_ENV=production webpack --watch --progress",
+    "build:watch": "NODE_ENV=production webpack --watch --progress",
+    "build": "NODE_ENV=production webpack ",
     "serve": "servor dist/ index.html 8081",
     "test": "echo \"This template does not include a test runner by default.\" && exit 1",
-    "deploy": "git push && git push --tags && npm publish",
+    "deploy": "yarn build && cp CORS dist/ && surge ./dist glimmer-mf-people.surge.sh",
     "format": "prettier --write \"src/**/*.js\"",
     "lint": "prettier --check \"src/**/*.js\"",
-    "watch": "run-p build serve"
+    "watch": "run-p build:watch serve"
   },
   "dependencies": {
     "@glimmer/component": "2.0.0-beta.11",

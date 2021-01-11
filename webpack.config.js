@@ -1,4 +1,3 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
@@ -13,9 +12,6 @@ module.exports = {
   devtool:'inline-source-map',
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: 'Glimmer Navbar'
-    })
   ],
   module: {
     rules: [
