@@ -4,6 +4,7 @@ dependencies:
   '@glimmer/helper': 2.0.0-beta.11_@babel+core@7.12.10
   '@glimmer/modifier': 2.0.0-beta.11
   '@glimmer/tracking': 2.0.0-beta.11
+  page: 1.11.6
   single-spa: 5.9.0
 devDependencies:
   '@babel/core': 7.12.10
@@ -3770,6 +3771,10 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-HxbkqiKwTRM2tmGIpmrzxgDDpm0=
+  /isarray/0.0.1:
+    dev: false
+    resolution:
+      integrity: sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=
   /isarray/1.0.0:
     dev: true
     resolution:
@@ -4524,6 +4529,12 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
+  /page/1.11.6:
+    dependencies:
+      path-to-regexp: 1.2.1
+    dev: false
+    resolution:
+      integrity: sha512-P6e2JfzkBrPeFCIPplLP7vDDiU84RUUZMrWdsH4ZBGJ8OosnwFkcUkBHp1DTIjuipLliw9yQn/ZJsXZvarsO+g==
   /param-case/3.0.4:
     dependencies:
       dot-case: 3.0.4
@@ -4619,6 +4630,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
+  /path-to-regexp/1.2.1:
+    dependencies:
+      isarray: 0.0.1
+    dev: false
+    resolution:
+      integrity: sha1-szcFwUAjTYc8hyHHuf2LVB7Tr/k=
   /path-type/3.0.0:
     dependencies:
       pify: 3.0.0
@@ -6207,6 +6224,7 @@ specifiers:
   clean-webpack-plugin: ^3.0.0
   html-webpack-plugin: ^4.5.1
   npm-run-all: ^4.1.5
+  page: ^1.11.6
   single-spa: ^5.8.3
   webpack: ^5.10.3
   webpack-cli: ^4.2.0

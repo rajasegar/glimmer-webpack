@@ -7,10 +7,10 @@ import {
 
 
 import PeopleList from './PeopleList.js';
+import { Route, Router } from './GlimmerRouter.js';
 
 class App extends Component {
   @tracked people = [];
-  @tracked current;
 
   constructor() {
     super(...arguments);
@@ -18,16 +18,6 @@ class App extends Component {
       let response = await fetch('https://www.swapi.tech/api/people/');
       let data = await response.json();
       this.people = data.results;
-
-      console.log(location.pathname);
-      const [,,id] = location.pathname.split('/');
-      if(id) {
-
-       response = await fetch(`https://www.swapi.tech/api/people/${id}`);
-       data = await response.json();
-        console.log(data);
-        this.current = data.result.properties;
-      }
     })();
   }
   
@@ -36,14 +26,15 @@ class App extends Component {
 
 setComponentTemplate(
   createTemplate(
-    { PeopleList },
+    { PeopleList, Route, Router },
     `
     <div class="grid">
   <div class="left-panel">
   <PeopleList @people={{this.people}} />
   </div>
   <div class="right-panel">
-  <h2>{{this.current.name}}</h2>
+  <Route @path="/:id" @component="PeopleInfo"/>
+  <Router/>
   </div>
 </div>
     `

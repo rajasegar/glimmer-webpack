@@ -1,13 +1,15 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
-module.exports = {
-  mode: process.NODE_ENV === 'production' ? 'production' : 'development',
+module.exports = (env) => {
+  return {
+  mode: env.production ? 'production' : 'development',
   entry: './src/index.js',
   output: {
     filename: 'people.js',
     path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'system'
+    libraryTarget: 'system',
+    publicPath: env.production ? 'https://glimmer-mf-people.surge.sh/' : '//localhost:8081/'
   },
   devtool:'inline-source-map',
   plugins: [
@@ -38,3 +40,4 @@ module.exports = {
     }
   }
 };
+}

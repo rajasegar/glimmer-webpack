@@ -2,6 +2,7 @@ const defaultOpts = {
   renderComponent: null,
   App: null,
   root: null, 
+  owner: null,
 }
 
 export default function singleSpaGlimmer(userOpts) {
@@ -38,9 +39,12 @@ function mount(opts) {
     .resolve()
   .then(() => {
     globalThis[Symbol.for('GLIMMER_VALIDATOR_REGISTRATION')] = false;
-    const { renderComponent, App, root } = opts;
+    const { renderComponent, App, root, owner } = opts;
     const element = document.getElementById(root);
-    renderComponent(App, element);
+    renderComponent(App, { 
+      element,
+      owner,
+    });
     });
 }
 
