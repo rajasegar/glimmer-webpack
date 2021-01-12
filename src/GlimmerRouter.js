@@ -1,6 +1,5 @@
 import Component from '@glimmer/component';
 import { renderComponent } from '@glimmer/core';
-import Loading from './Loading.js';
 import page from 'page';
 
 import {
@@ -10,6 +9,9 @@ import {
   getOwner,
 } from '@glimmer/core';
 
+
+import Loading from './Loading.js';
+import LocaleService from './services/LocaleService.js';
 
 class Route extends Component {
 
@@ -36,7 +38,6 @@ class Router extends Component {
 
 function startRouting(element, router) {
 
-  page.base('/people');
 
   const loading = (ctx, next) => {
     element.innerHTML = '';
@@ -52,6 +53,7 @@ function startRouting(element, router) {
           element,
           owner: {
             services: {
+              locale: new LocaleService('en_US')
             },
           },
           args: {
@@ -71,7 +73,7 @@ function startRouting(element, router) {
     });
   });
 
-  page({ popstate: false });
+  page();
 }
 
 setComponentTemplate(createTemplate({ startRouting }, `

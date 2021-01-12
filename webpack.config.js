@@ -1,4 +1,5 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = (env) => {
@@ -6,14 +7,16 @@ module.exports = (env) => {
   mode: env.production ? 'production' : 'development',
   entry: './src/index.js',
   output: {
-    filename: 'people.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'system',
-    publicPath: env.production ? 'https://glimmer-mf-people.surge.sh/' : '//localhost:8081/'
+    publicPath: '/' 
   },
   devtool:'inline-source-map',
   plugins: [
     new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Glimmer with Webpack'
+    })
   ],
   module: {
     rules: [
@@ -32,12 +35,18 @@ module.exports = (env) => {
           },
         },
       },
+      {
+        test: /\.css$/i,
+        use:['style-loader', 'css-loader']
+      },
+      {
+        test: /\.svg$/i,
+        use:['file-loader']
+      }
     ],
   },
   devServer: {
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-    }
+    open: true,
   }
 };
 }

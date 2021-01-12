@@ -1,13 +1,17 @@
-# glimmer-snowpack
+# glimmer-webpack
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
 
-This is a [Snowpack](https://snowpack.dev) application template for [glimmer](https://glimmerjs.com).
+This is a [Webpack](https://webpack.js.org) application template for [glimmer](https://glimmerjs.com).
 
 ## Usage
-This is how you can use this template with Snowpack to create glimmer apps:
+Clone it via git 
 ```
-npx create-snowpack-app my-awesome-glimmer-app --template glimmer-snowpack
+git clone https://github.com/rajasegar/glimmer-webpack
+```
+
+or use something like [degit]()
+```
+degit rajasegar/glimmer-webpack
 ```
 
 ## Available Scripts
@@ -24,10 +28,4 @@ You will also see any lint errors in the console.
 
 Builds a static copy of your site to the `build/` folder.
 Your app is ready to be deployed!
-
-**For the best production performance:** Add a build bundler plugin like [@snowpack/plugin-webpack](https://github.com/snowpackjs/snowpack/tree/master/plugins/plugin-webpack) or [snowpack-plugin-rollup-bundle](https://github.com/ParamagicDev/snowpack-plugin-rollup-bundle) to your `snowpack.config.json` config file.
-
-### Q: What about Eject?
-
-No eject needed! Snowpack guarantees zero lock-in, and CSA strives for the same.
 

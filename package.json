@@ -1,15 +1,11 @@
 {
-  "name": "@glimmer-mf/people",
+  "name": "glimmer-webpack",
   "scripts": {
     "start": "webpack serve",
-    "build:watch": " webpack --env production --watch --progress",
     "build": "webpack --env production ",
-    "serve": "servor dist/ index.html 8081",
     "test": "echo \"This template does not include a test runner by default.\" && exit 1",
-    "deploy": "yarn build && cp CORS dist/ && surge ./dist glimmer-mf-people.surge.sh",
     "format": "prettier --write \"src/**/*.js\"",
-    "lint": "prettier --check \"src/**/*.js\"",
-    "watch": "run-p build:watch serve"
+    "lint": "prettier --check \"src/**/*.js\""
   },
   "dependencies": {
     "@glimmer/component": "2.0.0-beta.11",
@@ -17,8 +13,7 @@
     "@glimmer/helper": "2.0.0-beta.11",
     "@glimmer/modifier": "2.0.0-beta.11",
     "@glimmer/tracking": "2.0.0-beta.11",
-    "page": "^1.11.6",
-    "single-spa": "^5.8.3"
+    "page": "^1.11.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -29,8 +24,10 @@
     "@glimmer/babel-plugin-strict-template-precompile": "^2.0.0-beta.11",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.1",
-    "npm-run-all": "^4.1.5",
+    "style-loader": "^2.0.0",
     "webpack": "^5.10.3",
     "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^3.11.0"
