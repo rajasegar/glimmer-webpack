@@ -9,7 +9,7 @@ Clone it via git
 git clone https://github.com/rajasegar/glimmer-webpack
 ```
 
-or use something like [degit]()
+or use something like [degit](https://github.com/Rich-Harris/degit)
 ```
 degit rajasegar/glimmer-webpack
 ```
