@@ -15,9 +15,9 @@ devDependencies:
   babel-loader: 8.2.2_0c87876f400e890f142c8d6ed9401ad5
   clean-webpack-plugin: 3.0.0_webpack@5.10.3
   css-loader: 5.0.1_webpack@5.10.3
-  file-loader: 6.2.0_webpack@5.10.3
   html-webpack-plugin: 4.5.1_webpack@5.10.3
   style-loader: 2.0.0_webpack@5.10.3
+  url-loader: 4.1.1_webpack@5.10.3
   webpack: 5.10.3_webpack-cli@4.2.0
   webpack-cli: 4.2.0_99c98d97f5d3ae9f12afb841a10c7ca5
   webpack-dev-server: 3.11.0_webpack-cli@4.2.0+webpack@5.10.3
@@ -2967,18 +2967,6 @@ packages:
       node: '>=0.8.0'
     resolution:
       integrity: sha512-D2y4bovYpzziGgbHYtGCMjlJM36vAl/y+xUyn1C+FVx8szd1E+86KwVw6XvYSzOP8iMpm1X0I4xJD+QtUb36OA==
-  /file-loader/6.2.0_webpack@5.10.3:
-    dependencies:
-      loader-utils: 2.0.0
-      schema-utils: 3.0.0
-      webpack: 5.10.3_webpack-cli@4.2.0
-    dev: true
-    engines:
-      node: '>= 10.13.0'
-    peerDependencies:
-      webpack: ^4.0.0 || ^5.0.0
-    resolution:
-      integrity: sha512-qo3glqyTa61Ytg4u73GultjHGjdRyig3tG6lPtyX/jOEJvHif9uB0/OCI2Kif6ctF3caQTW2G5gym21oAsI4pw==
   /file-uri-to-path/1.0.0:
     dev: true
     optional: true
@@ -4155,6 +4143,14 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-JIhqnCasI9yD+SsmkquHBxTSEuZdQX5BuQnS2Vc7puQQQ+8yiP5AY5uWhpdv4YL4VM5c6iliiYWPgJ/nJQLp7w==
+  /mime-types/2.1.28:
+    dependencies:
+      mime-db: 1.45.0
+    dev: true
+    engines:
+      node: '>= 0.6'
+    resolution:
+      integrity: sha512-0TO2yJ5YHYr7M2zzT7gDU1tbwHxEUWBCLt0lscSNpcdAfFyJOVEpRYNS7EXVcTLNj/25QO8gulHC5JtTzSE2UQ==
   /mime/1.6.0:
     dev: true
     engines:
@@ -5834,6 +5830,23 @@ packages:
     dev: true
     resolution:
       integrity: sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
+  /url-loader/4.1.1_webpack@5.10.3:
+    dependencies:
+      loader-utils: 2.0.0
+      mime-types: 2.1.28
+      schema-utils: 3.0.0
+      webpack: 5.10.3_webpack-cli@4.2.0
+    dev: true
+    engines:
+      node: '>= 10.13.0'
+    peerDependencies:
+      file-loader: '*'
+      webpack: ^4.0.0 || ^5.0.0
+    peerDependenciesMeta:
+      file-loader:
+        optional: true
+    resolution:
+      integrity: sha512-3BTV812+AVHHOJQO8O5MkWgZ5aosP7GnROJwvzLS9hWDj00lZ6Z0wNak423Lp9PBZN05N+Jk/N5Si8jRAlGyWA==
   /url-parse/1.4.7:
     dependencies:
       querystringify: 2.2.0
@@ -6233,10 +6246,10 @@ specifiers:
   babel-loader: ^8.2.2
   clean-webpack-plugin: ^3.0.0
   css-loader: ^5.0.1
-  file-loader: ^6.2.0
   html-webpack-plugin: ^4.5.1
   page: ^1.11.6
   style-loader: ^2.0.0
+  url-loader: ^4.1.1
   webpack: ^5.10.3
   webpack-cli: ^4.2.0
   webpack-dev-server: ^3.11.0

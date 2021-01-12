@@ -9,7 +9,7 @@ module.exports = (env) => {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/' 
+    publicPath: '/'
   },
   devtool:'inline-source-map',
   plugins: [
@@ -41,7 +41,7 @@ module.exports = (env) => {
       },
       {
         test: /\.svg$/i,
-        use:['file-loader']
+        use:['url-loader']
       }
     ],
   },

@@ -47,7 +47,7 @@ function startRouting(element, router) {
 
   router.registry.forEach(r => {
     page(r.path, loading, (ctx) => {
-      import(`./pages/${r.component}.js`).then(component => {
+      import( /* webpackChunkName: "[request]" */ `./pages/${r.component}.js`).then(component => {
         element.innerHTML = '';
         renderComponent(component.default, { 
           element,
